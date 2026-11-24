@@ -1,6 +1,5 @@
-
 const thumbnails = document.querySelectorAll(".thumbnail");
-const fullImage = document.getElementById("fullImage");
+const fullImage = document.querySelector(".fullImage");
 
 thumbnails.forEach(thumbnail => {
     thumbnail.addEventListener("click", () => {
@@ -10,7 +9,9 @@ thumbnails.forEach(thumbnail => {
 
         const img = document.createElement("img");
         img.src = src;
+        img.alt = thumbnail.alt;
 
         fullImage.appendChild(img);
     });
 });
+
