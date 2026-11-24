@@ -21,3 +21,10 @@ function sortAscending() {
 }
 
 document.getElementById("ascending").addEventListener("click", sortAscending);
+
+function sortDescending() {
+    prices.sort((a, b) => b - a);
+    showPrices();
+}
+
+document.getElementById("descending").addEventListener("click", sortDescending);
