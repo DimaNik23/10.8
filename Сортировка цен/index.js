@@ -1,7 +1,8 @@
-
 const prices = [100, 500, 250, 750, 300];
 
-const priceList = document.getElementById("priceList");
+const priceList = document.querySelector(".priceList");
+const ascending = document.querySelector(".ascending");
+const descending = document.querySelector(".descending");
 
 function showPrices() {
     priceList.innerHTML = "";
@@ -13,18 +14,17 @@ function showPrices() {
     });
 }
 
-showPrices();
-
 function sortAscending() {
     prices.sort((a, b) => a - b);
     showPrices();
 }
-
-document.getElementById("ascending").addEventListener("click", sortAscending);
 
 function sortDescending() {
     prices.sort((a, b) => b - a);
     showPrices();
 }
 
-document.getElementById("descending").addEventListener("click", sortDescending);
+ascending.addEventListener("click", sortAscending);
+descending.addEventListener("click", sortDescending);
+
+showPrices();
