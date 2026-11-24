@@ -6,3 +6,11 @@ add.addEventListener("click", () => {
     li.textContent = "Новый элемент списка";
     list.appendChild(li);
 });
+
+const remove = document.getElementById("remove");
+
+remove.addEventListener("click", () => {
+    if (list.lastElementChild) {
+        list.lastElementChild.remove();
+    }
+});
