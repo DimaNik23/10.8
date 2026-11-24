@@ -1,0 +1,9 @@
+
+body {
+    width: 450px;
+    margin: 20px auto;
+}
+
+button {
+    cursor: pointer;
+}

@@ -1,0 +1,16 @@
+
+const prices = [100, 500, 250, 750, 300];
+
+const priceList = document.getElementById("priceList");
+
+function showPrices() {
+    priceList.innerHTML = "";
+
+    prices.forEach(price => {
+        const li = document.createElement("li");
+        li.textContent = price;
+        priceList.appendChild(li);
+    });
+}
+
+showPrices();
