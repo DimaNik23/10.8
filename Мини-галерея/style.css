@@ -1,0 +1,31 @@
+
+body {
+    margin: 0;
+    background-color: #f5f6f7;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #1e1e1e;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.thumbnail {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#fullImage img {
+    width: 600px;
+    max-width: 100%;
+}
