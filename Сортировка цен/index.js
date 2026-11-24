@@ -14,3 +14,10 @@ function showPrices() {
 }
 
 showPrices();
+
+function sortAscending() {
+    prices.sort((a, b) => a - b);
+    showPrices();
+}
+
+document.getElementById("ascending").addEventListener("click", sortAscending);
