@@ -1,0 +1,29 @@
+body {
+    width: 550px;
+    max-width: 95%;
+    margin: 20px auto;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.nameError,
+.emailError {
+    display: block;
+    color: red;
+    font-size: 14px;
+}
+
+.result {
+    margin-top: 20px;
+    white-space: pre-line;
+}
+
+textarea {
+    max-width: 100%;
+}
