@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+    color: #333;
+}
+
+.film-form {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #aaa;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    display: block;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.cancel-button {
+    margin-top: 5px;
+}
+
+.cancel-button:not([hidden]) {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 5px #aaa;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td button {
+    margin-right: 5px;
+}
+
+.error {
+    color: red;
+    white-space: pre-line;
+}
+
+.error:empty {
+    display: none;
+}
