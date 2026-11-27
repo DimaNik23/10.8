@@ -1,62 +1,79 @@
 const form = document.querySelector(".survey");
-const username = document.querySelector(".username");
-const email = document.querySelector(".email");
-const rating = document.querySelector(".rating");
-const comments = document.querySelector(".comments");
-
 const nameError = document.querySelector(".nameError");
 const emailError = document.querySelector(".emailError");
 const result = document.querySelector(".result");
 
-function checkName() {
-    if (!username.value.trim()) {
-        nameError.textContent = "Введите имя пользователя!";
-        return false;
-    }
+const dict = {
+    required: val => val.trim().length > 0,
+    email: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)
+};
 
-    nameError.textContent = "";
-    return true;
+function validate(validators) {
+    let valid = true;
+
+    validators.forEach(el => {
+        el.error.textContent = "";
+
+        const hasError = el.checkers.some(checker => {
+            if (!dict[checker](el.field)) {
+                el.error.textContent = el.messages[checker];
+                return true;
+            }
+
+            return false;
+        });
+
+        if (hasError) {
+            valid = false;
+        }
+    });
+
+    return valid;
 }
-
-function checkEmail() {
-    if (!email.value.trim()) {
-        emailError.textContent = "Введите email!";
-        return false;
-    }
-
-    if (!email.validity.valid) {
-        emailError.textContent = "Некорректный email!";
-        return false;
-    }
-
-    emailError.textContent = "";
-    return true;
-}
-
-username.addEventListener("input", checkName);
-email.addEventListener("input", checkEmail);
 
 form.addEventListener("submit", event => {
     event.preventDefault();
 
-    const validName = checkName();
-    const validEmail = checkEmail();
+    const data = new FormData(form);
+
+    const name = data.get("username").trim();
+    const email = data.get("email").trim();
+
+    const validators = [
+        {
+            field: name,
+            checkers: ["required"],
+            error: nameError,
+            messages: {
+                required: "Введите имя пользователя!"
+            }
+        },
+        {
+            field: email,
+            checkers: ["required", "email"],
+            error: emailError,
+            messages: {
+                required: "Введите email!",
+                email: "Некорректный email!"
+            }
+        }
+    ];
 
     result.textContent = "";
 
-    if (!validName || !validEmail) {
+    if (!validate(validators)) {
         return;
     }
 
-    const gender = document.querySelector('input[name="gender"]:checked');
-    const interests = document.querySelectorAll(".interest:checked");
+    const gender = data.get("gender");
+    const rating = data.get("rating");
+    const interests = data.getAll("interest");
+    const comments = data.get("comments");
 
-    const selectedInterests = Array.from(interests).map(interest => interest.value);
-
-    result.textContent = `Имя: ${username.value.trim()}
-Email: ${email.value.trim()}
-Пол: ${gender ? gender.value : "Не указан"}
-Оценка сервиса: ${rating.value}
-Интересы: ${selectedInterests.join(", ") || "Не указаны"}
-Комментарии: ${comments.value || "Нет"}`;
+    result.textContent = `Имя: ${name}
+Email: ${email}
+Пол: ${gender || "Не указан"}
+Оценка сервиса: ${rating}
+Интересы: ${interests.join(", ") || "Не указаны"}
+Комментарии: ${comments || "Нет"}`;
 });

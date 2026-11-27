@@ -14,7 +14,7 @@
         <p>
             <label>
                 Имя пользователя:
-                <input type="text" class="username" required>
+                <input type="text" name="username" class="username" required>
             </label>
             <span class="nameError"></span>
         </p>
@@ -22,7 +22,7 @@
         <p>
             <label>
                 Email:
-                <input type="email" class="email" required>
+                <input type="email" name="email" class="email" required>
             </label>
             <span class="emailError"></span>
         </p>
@@ -42,26 +42,26 @@
         <p>
             <label>
                 Оценка сервиса:
-                <input type="range" class="rating" min="1" max="10" value="5">
+                <input type="range" name="rating" min="1" max="10" value="5">
             </label>
         </p>
 
         <p>
             Интересы пользователя:<br>
             <label>
-                <input type="checkbox" class="interest" value="Спорт">
+                <input type="checkbox" name="interest" value="Спорт">
                 Спорт
             </label><br>
             <label>
-                <input type="checkbox" class="interest" value="Музыка">
+                <input type="checkbox" name="interest" value="Музыка">
                 Музыка
             </label><br>
             <label>
-                <input type="checkbox" class="interest" value="Путешествия">
+                <input type="checkbox" name="interest" value="Путешествия">
                 Путешествия
             </label><br>
             <label>
-                <input type="checkbox" class="interest" value="Кино">
+                <input type="checkbox" name="interest" value="Кино">
                 Кино
             </label>
         </p>
@@ -69,7 +69,7 @@
         <p>
             <label>
                 Дополнительные комментарии:<br>
-                <textarea class="comments" rows="4" cols="40"></textarea>
+                <textarea name="comments" rows="4" cols="40"></textarea>
             </label>
         </p>
 
