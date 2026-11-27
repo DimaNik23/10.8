@@ -1,17 +1,17 @@
-const thumbnails = document.querySelectorAll(".thumbnail");
+const thumbnails = document.querySelector(".thumbnails");
 const fullImage = document.querySelector(".fullImage");
 
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener("click", () => {
-        const src = thumbnail.getAttribute("src");
+thumbnails.addEventListener("click", event => {
+    const thumbnail = event.target.closest(".thumbnail");
 
-        fullImage.innerHTML = "";
+    if (!thumbnail) {
+        return;
+    }
 
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = thumbnail.alt;
+    const img = document.createElement("img");
+    img.src = thumbnail.getAttribute("src");
+    img.alt = thumbnail.alt;
 
-        fullImage.appendChild(img);
-    });
+    fullImage.innerHTML = "";
+    fullImage.appendChild(img);
 });
-
