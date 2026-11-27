@@ -10,23 +10,23 @@
 <body>
     <h1>Калькулятор стоимости доставки</h1>
 
-    <form class="product-form">
+    <form class="product-form" novalidate>
         <p>
             <label>
                 Название товара:
-                <input type="text" class="product-name" required>
+                <input type="text" name="name" required>
             </label>
         </p>
         <p>
             <label>
                 Вес товара (кг):
-                <input type="number" class="weight" step="any" required>
+                <input type="number" name="weight" step="any" required>
             </label>
         </p>
         <p>
             <label>
                 Расстояние доставки (км):
-                <input type="number" class="distance" step="any" required>
+                <input type="number" name="distance" step="any" required>
             </label>
         </p>
         <button type="submit">Добавить товар</button>
