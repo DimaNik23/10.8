@@ -15,12 +15,12 @@ function showPrices() {
 }
 
 function sortAscending() {
-    prices.sort((a, b) => a - b);
+    prices.sort();
     showPrices();
 }
 
 function sortDescending() {
-    prices.sort((a, b) => b - a);
+    prices.sort().reverse();
     showPrices();
 }
 
