@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #c9d2db;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.promo-input {
+    width: 220px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    outline: none;
+}
+
+.promo-input:focus {
+    border-color: #589df6;
+}
+
+button {
+    padding: 12px 22px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #589df6;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.message {
+    display: none;
+    margin: 15px 0 0;
+    color: green;
+}
+
+.active .promo-input {
+    border-color: green;
+    color: green;
+}
+
+.active .message {
+    display: block;
+}
